@@ -1,8 +1,6 @@
 package com.project.questapp.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,9 +13,14 @@ import lombok.NoArgsConstructor;
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
-    private String userName;
+    @Column(name = "username")
+    private String username;
 
+    @Column(name = "password")
     private String password;
+
 }
