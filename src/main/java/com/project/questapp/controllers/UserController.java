@@ -3,6 +3,8 @@ package com.project.questapp.controllers;
 import com.project.questapp.entities.User;
 import com.project.questapp.repos.UserRepository;
 import com.project.questapp.services.abstracts.UserService;
+import com.project.questapp.services.dtos.requests.User.UserCreateRequest;
+import com.project.questapp.services.dtos.requests.User.UserUpdateRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,13 +28,13 @@ public class UserController {
     }
 
     @PostMapping
-    public User addUser(@RequestBody User user) {
-        return userService.addUser(user);
+    public void addUser(@RequestBody UserCreateRequest userCreateRequest) {
+        userService.addUser(userCreateRequest);
     }
 
     @PutMapping
-    public User updateUser(@RequestBody User user) {
-        return userService.updateUser(user);
+    public void updateUser(@RequestBody UserUpdateRequest userUpdateRequest) {
+        userService.updateUser(userUpdateRequest);
     }
 
     @DeleteMapping("/{userId}")
