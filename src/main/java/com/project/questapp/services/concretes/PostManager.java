@@ -41,7 +41,11 @@ public class PostManager implements PostService {
         if(user == null) {
             throw new RuntimeException("not found user");
         }
-        Post post = mapperService.forRequest().map(postCreateRequest, Post.class);
+        //Post post = mapperService.forRequest().map(postCreateRequest, Post.class);
+        Post post = new Post();
+        post.setTitle(postCreateRequest.getTitle());
+        post.setText(postCreateRequest.getText());
+        post.setUser(user);
         postRepository.save(post);
     }
 

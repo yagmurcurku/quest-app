@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PostCreateRequest {
 
-    Long id;
+
     String text;
     String title;
     Long userId;

@@ -24,7 +24,6 @@ public class Post {
     @JoinColumn(name = "user_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
-    @Column(name = "user_id")
     private User user;
 
     @Column(name = "title")
